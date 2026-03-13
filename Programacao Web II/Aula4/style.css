@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9fb;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* caixa do formulário */
+.container {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+/* campos */
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* botão */
+.butao {
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: rgb(180, 180, 230);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* efeito quando passa o mouse */
+.butao:hover {
+    background-color: rgb(150, 150, 210);
+}
