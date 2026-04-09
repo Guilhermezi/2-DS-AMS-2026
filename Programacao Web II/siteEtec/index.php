@@ -31,7 +31,7 @@ $subtitulo_secao = "Nossos Cursos Técnicos";
             </div>
 
             <div class="carousel-item">
-                <img src="image/image.png" class="d-block w-100" alt="Banner 2">
+                <img src="image/patio.webp" class="d-block w-100" alt="Patio ETEC">
                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
                     <h5><?php echo "Ensino Gratuito de Qualidade"; ?></h5>
                     <p><?php echo "Prepare-se para o mercado com os melhores profissionais."; ?></p>
@@ -39,7 +39,11 @@ $subtitulo_secao = "Nossos Cursos Técnicos";
             </div>
 
             <div class="carousel-item">
-                <img src="image/image.png" class="d-block w-100" alt="Banner 3">
+                <img src="image/Biblioteca.webp" class="d-block w-100" alt="Biblioteca ETEC">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5><?php echo "Espaço de Estudo"; ?></h5>
+                    <p><?php echo "Ambiente propício para o aprendizado e a pesquisa."; ?></p>
+                </div>
             </div>
         </div>
 

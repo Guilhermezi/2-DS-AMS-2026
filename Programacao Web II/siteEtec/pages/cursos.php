@@ -28,7 +28,7 @@ include '../include/header.php';
 
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm">
-                <img src="../image/image.png" class="card-img-top p-3" alt="Contabilidade">
+                <img src="../image/contabilidade.webp" class="card-img-top p-3" alt="Contabilidade">
                 <div class="card-body text-center">
                     <h5 class="fw-bold text-danger"><?php echo "Contabilidade"; ?></h5>
                     <p><?php echo "Foco em cálculos, impostos e finanças."; ?></p>
@@ -39,7 +39,7 @@ include '../include/header.php';
 
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm">
-                <img src="../image/image.png" class="card-img-top p-3" alt="DS">
+                <img src="../image/IndianoCodando.png" class="card-img-top p-3" alt="DS">
                 <div class="card-body text-center">
                     <h5 class="fw-bold text-danger"><?php echo "Desenvolvimento de Sistemas"; ?></h5>
                     <p><?php echo "Criação de sites, sistemas e aplicativos."; ?></p>
@@ -50,7 +50,7 @@ include '../include/header.php';
 
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm">
-                <img src="../image/image.png" class="card-img-top p-3" alt="Finanças">
+                <img src="../image/financas.webp" class="card-img-top p-3" alt="Finanças">
                 <div class="card-body text-center">
                     <h5 class="fw-bold text-danger"><?php echo "Finanças"; ?></h5>
                     <p><?php echo "Gestão de investimentos e controle bancário."; ?></p>
@@ -72,7 +72,7 @@ include '../include/header.php';
 
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm">
-                <img src="../image/image.png" class="card-img-top p-3" alt="RH">
+                <img src="../image/RH.jpg" class="card-img-top p-3" alt="RH">
                 <div class="card-body text-center">
                     <h5 class="fw-bold text-danger"><?php echo "Recursos Humanos"; ?></h5>
                     <p><?php echo "Gestão de pessoas e leis trabalhistas."; ?></p>
@@ -83,7 +83,7 @@ include '../include/header.php';
 
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm">
-                <img src="../image/image.png" class="card-img-top p-3" alt="Jurídico">
+                <img src="../image/SJ.jpg" class="card-img-top p-3" alt="Jurídico">
                 <div class="card-body text-center">
                     <h5 class="fw-bold text-danger"><?php echo "Serviços Jurídicos"; ?></h5>
                     <p><?php echo "Suporte administrativo em escritórios de advocacia."; ?></p>

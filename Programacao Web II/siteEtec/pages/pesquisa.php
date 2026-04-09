@@ -1,10 +1,16 @@
 <?php 
+// Define o caminho para voltar uma pasta (ajuda a achar imagens e links no header/footer)
 $base_path = "../"; 
+// Importa o arquivo de cabeçalho da pasta include
 include '../include/header.php'; 
 
-// LÓGICA PHP SIMPLES
+// --- LÓGICA DE CONTROLE ---
+// Cria uma variável 'bandeira'. Começa como 'falso' (não enviado).
 $enviado = false;
+
+// Verifica se o usuário clicou no botão de enviar (se os dados chegaram via POST)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Se chegou dados, muda a variável para 'verdadeiro' para mudar a tela
     $enviado = true;
 }
 ?>
@@ -19,18 +25,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <hr>
                     <p class="fs-5">
                         <?php 
+                        // Exibe o nome que o usuário digitou na tela anterior
                         echo "Oi, <strong>" . $_POST["nome"] . "</strong>! ";
                         echo "Sua avaliação sobre a ETEC Zona Leste foi registrada com sucesso."; 
                         ?>
                     </p>
+                    
                     <div class="bg-light p-3 rounded mb-4 text-start">
                         <strong><?php echo "Resumo da sua avaliação:"; ?></strong><br>
                         <?php 
+                        // Exibe os valores selecionados nos campos 'professores', 'estrutura' e 'recomenda'
                         echo "- Professores: <strong>" . $_POST["professores"] . "</strong><br>";
                         echo "- Estrutura: <strong>" . $_POST["estrutura"] . "</strong><br>";
                         echo "- Recomendaria a escola? <strong>" . $_POST["recomenda"] . "</strong>";
                         ?>
                     </div>
+                    
                     <p class="text-muted small"><?php echo "Sua opinião ajuda a melhorar nossa unidade!"; ?></p>
                     <a href="pesquisa.php" class="btn btn-danger px-5"><?php echo "Nova Pesquisa"; ?></a>
                 </div>
@@ -46,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <form action="pesquisa.php" method="POST">
+                            
                             <div class="mb-4">
                                 <label class="form-label fw-bold"><?php echo "Seu Nome:"; ?></label>
                                 <input type="text" name="nome" class="form-control" required placeholder="Digite seu nome completo">
@@ -100,9 +111,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
             </div>
-        <?php endif; ?>
+        <?php endif; // Fim da condicional PHP ?>
 
     </section>
 </main>
 
-<?php include '../include/footer.php'; ?>
+<?php 
+// Importa o arquivo de rodapé da pasta include
+include '../include/footer.php'; 
+?>
