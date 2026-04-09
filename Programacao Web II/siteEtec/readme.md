@@ -49,8 +49,8 @@ Desenvolver um site institucional inspirado na ETEC Zona Leste, aplicando concei
 
 > Aqui está o vídeo demonstrando o funcionamento do site:
 
-<video controls src="./Video/funcionamento.mp4" title="Title"></video>
 
+https://github.com/user-attachments/assets/b7e701d1-58c5-4441-870b-5ac821e9882d
 
 ---
 
