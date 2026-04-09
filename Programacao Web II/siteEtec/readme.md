@@ -50,7 +50,7 @@ Desenvolver um site institucional inspirado na ETEC Zona Leste, aplicando concei
 > Aqui está o vídeo demonstrando o funcionamento do site:
 
 <video width="640" height="360" controls>
-  <source src="Video/funcionamento.webm" type="video/webm">
+  <source src="./Video/funcionamento.mp4" type="video/webm">
   Seu navegador não suporta a tag de vídeo.
 </video>
 
