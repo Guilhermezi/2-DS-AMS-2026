@@ -6,6 +6,8 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         CadastroCliente Client = new CadastroCliente();
-
+        Botoes Botoes = new Botoes();
+        Password Pass = new Password();
+        FormattedTextField FldPass = new FormattedTextField();
     }
 }
