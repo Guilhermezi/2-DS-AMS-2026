@@ -29,8 +29,8 @@ public class FormattedTextField extends JFrame {
 
         try{
             mascaraCEP = new MaskFormatter("#####-###");
-            mascaraTEL = new MaskFormatter("(##)####-####");
-            mascaracCPF = new MaskFormatter("########-##");
+            mascaraTEL = new MaskFormatter("(##)#####-####");
+            mascaracCPF = new MaskFormatter("#########-##");
             mascaracDATA = new MaskFormatter("##/##/####");
 
             mascaraCEP.setPlaceholderCharacter('_');
