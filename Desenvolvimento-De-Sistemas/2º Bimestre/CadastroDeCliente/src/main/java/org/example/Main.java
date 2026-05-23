@@ -5,10 +5,10 @@ import javax.swing.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        CadastroCliente Client = new CadastroCliente();
-        Botoes Botoes = new Botoes();
-        Password Pass = new Password();
-        FormattedTextField FldPass = new FormattedTextField();
+//        CadastroCliente Client = new CadastroCliente();
+//        Botoes Botoes = new Botoes();
+//        Password Pass = new Password();
+//        FormattedTextField FldPass = new FormattedTextField();
         Calculadora calc = new Calculadora();
     }
 }
