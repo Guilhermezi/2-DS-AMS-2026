@@ -8,32 +8,28 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Base sem Flexbox para não quebrar os elementos fixos */
 body {
     background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     min-height: 100vh;
     color: #333;
-    /* Compensação para o conteúdo não sumir atrás da Navbar e do Footer fixos */
+    /* Espaço para não sumir atrás da navbar e do footer fixos */
     padding-top: 100px;
     padding-bottom: 80px;
 }
 
 /* ==========================================
-   2. COMPONENTES FIXOS (NAVBAR & FOOTER)
+   2. NAVBAR & FOOTER FIXOS
    ========================================== */
-
-/* Navbar Fixa no Topo */
 nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
     min-height: 70px;
     background-color: #1e3c72;
     color: white;
     display: flex;
-    flex-wrap: wrap; /* Permite que os links quebrem linha em telas menores */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 10px 2rem;
@@ -64,7 +60,6 @@ nav .links-nav a:hover {
     color: #cfdef3;
 }
 
-/* Footer Fixo na Base */
 footer {
     position: fixed;
     bottom: 0;
@@ -85,19 +80,15 @@ footer p {
 }
 
 /* ==========================================
-   3. LAYOUT DO CONTEÚDO (CONTAINER CENTRAL)
+   3. CONTAINER CENTRAL
    ========================================== */
-
-/* Centralização controlada sem afetar a estrutura do body */
 .container {
     max-width: 800px;
-    margin: 40px auto; 
+    margin: 40px auto;
     background: #ffffff;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    height: auto;
-    min-height: min-content;
 }
 
 .home-box {
@@ -118,10 +109,64 @@ h1 {
 }
 
 /* ==========================================
-   4. GRADE DE ELEMENTOS DE INTERAÇÃO (BOTÕES)
+   4. FORMULÁRIOS
    ========================================== */
 
-/* Grade para a lista de exercícios da página inicial */
+/* Todos os forms ficam em coluna centralizada */
+.home-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.home-box form label {
+    font-size: 15px;
+    color: #444;
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+    display: block;
+    margin-top: 5px;
+}
+
+/* CORREÇÃO DE ESPECIFICIDADE: Força o layout correto dos elementos internos */
+.home-box form input[type="number"],
+.home-box form input[type="text"],
+.home-box form select {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* Alinhamento opcional caso use divs envolventes (.campo) */
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 5px;
+}
+
+/* Garante que as labels dentro da div .campo também alinhem sem problemas */
+.campo label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* ==========================================
+   5. BOTÕES
+   ========================================== */
+
+/* Grade de links da página inicial */
 .links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -129,7 +174,7 @@ h1 {
     margin-top: 20px;
 }
 
-/* Classe base de botões (usada em links ou inputs de envio) */
+/* Estilo base — usado em <a> e <input type="submit"> */
 .botao {
     padding: 12px 25px;
     border: none;
@@ -142,10 +187,8 @@ h1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     font-size: 14px;
     min-height: 50px;
-    height: auto;
     transition: transform 0.3s, background-color 0.3s;
 }
 
@@ -154,25 +197,31 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Agrupador para formulários de exercícios (Ex: Enviar e Resetar) */
+/* Agrupador de botões (Enviar + Reset) */
 .botoes {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+    width: 100%;
 }
 
-/* Variação do botão de limpar/resetar formulários */
-.reset {
+/* Variação cinza para o botão de reset */
+.home-box form .botao.reset {
     background-color: #777;
 }
 
-.reset:hover {
+.home-box form .botao.reset:hover {
     background-color: #555;
 }
 
+/* Espaço acima do botão de voltar ao formulário */
+.form-voltar {
+    margin-top: 20px;
+}
+
 /* ==========================================
-   5. TEXTOS E RESULTADOS
+   6. RESULTADOS
    ========================================== */
 p {
     margin: 8px 0;
@@ -180,7 +229,6 @@ p {
     line-height: 1.6;
 }
 
-/* Estilo coringa para destacar os resultados dos exercícios PHP */
 .resultado {
     margin-top: 20px;
     padding: 15px;
@@ -188,4 +236,18 @@ p {
     border-left: 5px solid #1e3c72;
     border-radius: 4px;
     font-weight: 500;
+    text-align: left; /* Deixa o texto dos resultados alinhado à esquerda por padrão */
+}
+
+/* Status de aprovação — usado em Aprovacao.php */
+.status-aprovado {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.status-reprovado {
+    color: #c62828;
+    font-weight: bold;
+    margin-top: 10px;
 }

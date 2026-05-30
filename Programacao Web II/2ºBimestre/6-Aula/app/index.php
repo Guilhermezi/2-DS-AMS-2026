@@ -16,18 +16,18 @@
         <p class="subtitulo">Lista de exercícios desenvolvidos em PHP</p>
 
         <div class="links">
-            <a href="Tabuada.php" class="botao">Tabuada</a>
-            <a href="Calculadora.php" class="botao">Calculadora</a>
-            <a href="Desconto.php" class="botao">Desconto</a>
-            <a href="Aprovacao.php" class="botao">Aprovação</a>
-            <a href="TrocaVariaveis.php" class="botao">Troca Variáveis</a>
-            <a href="FinalDosQuadrados.php" class="botao">Final dos Quadrados</a>
-            <a href="Salario.php" class="botao">Salário</a>
-            <a href="Media.php" class="botao">Média</a>
-            <a href="MaiorMenor.php" class="botao">Maior e Menor</a>
-            <a href="Somalmpares.php" class="botao">Soma Ímpares</a>
-            <a href="ParImpar.php" class="botao">Par ou Ímpar</a>
-            <a href="Ordem.php" class="botao">Ordem</a>
+            <a href="Tabuada.php"           class="botao">Ex. 1 — Tabuada</a>
+            <a href="Desconto.php"          class="botao">Ex. 2 — Desconto</a>
+            <a href="Aprovacao.php"         class="botao">Ex. 3 — Aprovação</a>
+            <a href="TrocaVariaveis.php"    class="botao">Ex. 4 — Troca de Variáveis</a>
+            <a href="FinalDosQuadrados.php" class="botao">Ex. 5 — Soma dos Quadrados</a>
+            <a href="Salario.php"           class="botao">Ex. 6 — Salário</a>
+            <a href="Media.php"             class="botao">Ex. 7 — Média</a>
+            <a href="MaiorMenor.php"        class="botao">Ex. 8 — Maior e Menor</a>
+            <a href="SomaImpares.php"       class="botao">Ex. 9 — Soma dos Ímpares</a>
+            <a href="ParImpar.php"          class="botao">Ex. 10 — Par ou Ímpar</a>
+            <a href="Calculadora.php"       class="botao">Ex. 11 — Calculadora</a>
+            <a href="Ordem.php"             class="botao">Ex. 12 — Ordem Decrescente</a>
         </div>
     </div>
 </main>

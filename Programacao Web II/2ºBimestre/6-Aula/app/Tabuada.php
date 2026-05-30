@@ -10,47 +10,26 @@
 
 <?php include 'includes/nav.php'; ?>
 
-<?php
-// Configuração de conexão com o banco (Docker)
-$host = 'db';
-$user = 'root';
-$pass = '1234';
-$db = 'meubanco';
-
-$conn = new mysqli($host, $user, $pass, $db);
-
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
-?>
-
 <main class="container">
     <div class="home-box">
 
         <?php if (!isset($_POST['numero'])): ?>
+            <!-- Formulário ainda não enviado → exibe o campo -->
 
             <h1>Tabuada</h1>
 
             <form action="" method="post">
-                <p><label for="numero">Digite um número</label></p>
-                
-                <input 
-                    type="number"
-                    name="numero"
-                    id="numero"
-                    placeholder="Ex: 5"
-                    required
-                    min="1"
-                    style="padding: 10px; width: 100%; max-width: 300px; border-radius: 8px; border: 1px solid #ccc; margin-top: 10px;"
-                >
+                <label for="numero">Digite um número:</label>
+                <input type="number" name="numero" id="numero" placeholder="Ex: 5" required min="1">
 
                 <div class="botoes">
                     <input type="submit" value="Calcular" class="botao">
-                    <input type="reset" value="Reset" class="botao reset">
+                    <input type="reset"  value="Reset"    class="botao reset">
                 </div>
             </form>
 
         <?php else: ?>
+            <!-- Formulário enviado → gera a tabuada do número informado -->
 
             <?php $numero = intval($_POST['numero']); ?>
 
@@ -59,14 +38,15 @@ if ($conn->connect_error) {
 
             <div class="resultado">
                 <?php
+                // Exibe as multiplicações de 1 a 10
                 for ($i = 1; $i <= 10; $i++) {
                     $resultado = $numero * $i;
-                    echo "<p>$numero x $i = <strong>$resultado</strong></p>";
+                    echo "<p>$numero × $i = <strong>$resultado</strong></p>";
                 }
                 ?>
             </div>
 
-            <form action="" method="get" style="margin-top: 20px;">
+            <form action="" method="get" class="form-voltar">
                 <input type="submit" value="Nova Tabuada" class="botao">
             </form>
 
