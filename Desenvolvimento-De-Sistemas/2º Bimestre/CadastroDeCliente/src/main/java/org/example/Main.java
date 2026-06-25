@@ -9,6 +9,11 @@ public class Main {
 //        Botoes Botoes = new Botoes();
 //        Password Pass = new Password();
 //        FormattedTextField FldPass = new FormattedTextField();
-        Calculadora calc = new Calculadora();
+//        Calculadora calc = new Calculadora();
+//        ExemploJList app = new ExemploJList();
+//        ExemploJList2 app1 = new ExemploJList2();
+//        new ExemploTable().setVisible(true);
+        ExemploJCombox combo = new ExemploJCombox();
+        
     }
 }

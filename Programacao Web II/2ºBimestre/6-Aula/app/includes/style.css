@@ -1,0 +1,253 @@
+/* ==========================================
+   1. RESET & CONFIGURAÇÕES GERAIS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    color: #333;
+    /* Espaço para não sumir atrás da navbar e do footer fixos */
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+/* ==========================================
+   2. NAVBAR & FOOTER FIXOS
+   ========================================== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 70px;
+    background-color: #1e3c72;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav .logo h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav .links-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav .links-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav .links-nav a:hover {
+    color: #cfdef3;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #1e3c72;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* ==========================================
+   3. CONTAINER CENTRAL
+   ========================================== */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.home-box {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* ==========================================
+   4. FORMULÁRIOS
+   ========================================== */
+
+/* Todos os forms ficam em coluna centralizada */
+.home-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.home-box form label {
+    font-size: 15px;
+    color: #444;
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+    display: block;
+    margin-top: 5px;
+}
+
+/* CORREÇÃO DE ESPECIFICIDADE: Força o layout correto dos elementos internos */
+.home-box form input[type="number"],
+.home-box form input[type="text"],
+.home-box form select {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* Alinhamento opcional caso use divs envolventes (.campo) */
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 5px;
+}
+
+/* Garante que as labels dentro da div .campo também alinhem sem problemas */
+.campo label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* ==========================================
+   5. BOTÕES
+   ========================================== */
+
+/* Grade de links da página inicial */
+.links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Estilo base — usado em <a> e <input type="submit"> */
+.botao {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1e3c72;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    min-height: 50px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.botao:hover {
+    background-color: #16325c;
+    transform: scale(1.05);
+}
+
+/* Agrupador de botões (Enviar + Reset) */
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Variação cinza para o botão de reset */
+.home-box form .botao.reset {
+    background-color: #777;
+}
+
+.home-box form .botao.reset:hover {
+    background-color: #555;
+}
+
+/* Espaço acima do botão de voltar ao formulário */
+.form-voltar {
+    margin-top: 20px;
+}
+
+/* ==========================================
+   6. RESULTADOS
+   ========================================== */
+p {
+    margin: 8px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f4f7f6;
+    border-left: 5px solid #1e3c72;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: left; /* Deixa o texto dos resultados alinhado à esquerda por padrão */
+}
+
+/* Status de aprovação — usado em Aprovacao.php */
+.status-aprovado {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.status-reprovado {
+    color: #c62828;
+    font-weight: bold;
+    margin-top: 10px;
+}

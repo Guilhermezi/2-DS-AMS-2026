@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de salário</title>
+    <style>
+        body {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            height: 100vh;           
+            display: flex;           
+            justify-content: center; 
+            align-items: center;     
+            margin: 0;
+        }
+        
+        .texto {
+            color: #c0c6ce;
+            font-size: 20px;
+            font-family: "Playpen Sans", sans-serif;
+            background: #010011;
+            border-radius: 15px;
+            border: solid rgb(54, 154, 216);
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .input input {
+            margin: 5px 0 15px 0;
+            padding: 8px;
+            width: 90%;
+            border-radius: 5px;
+        }
+
+        .submit {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit input {
+            text-align: center;
+            padding: 8px 0;
+            width: 40%;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="texto">
+         <h1>Cálculo de salário</h1>
+         <form action="FormularioAtividade.php" method="post">
+            <div class="input">
+                <label for="salario">Quanto você recebe por hora?</label> <br>
+                <input type="text" name="salario" id="salario" placeholder="Ex: 25.50"><br>
+                
+                <label for="horas">Quantas horas você trabalha por dia?</label> <br>
+                <input type="text" name="horas" id="horas" placeholder="Ex: 8">
+            </div>
+                
+            <div class="submit">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
