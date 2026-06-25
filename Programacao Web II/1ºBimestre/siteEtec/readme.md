@@ -1,9 +1,4 @@
 
-
-https://github.com/user-attachments/assets/1b1f1907-a25b-42a9-93bd-6a345dd0149d
-
-
-
 # 🎓 Site ETEC Zona Leste
 
 Projeto desenvolvido para a disciplina de **Programação Web II (PW II)** com o objetivo de recriar o site institucional da **ETEC Zona Leste**, aplicando melhorias de design, responsividade e interatividade com **PHP, JavaScript e Bootstrap**.
@@ -103,11 +98,7 @@ http://localhost/siteEtec/index.php
 
 Vídeo demonstrando o funcionamento do projeto:
 
-
-
-https://github.com/user-attachments/assets/18a75966-dad3-4193-96cc-198baaab29af
-
-
+https://github.com/user-attachments/assets/c84cfe2d-5f1a-4f54-b913-fe25acebf00a
 
 ---
 
