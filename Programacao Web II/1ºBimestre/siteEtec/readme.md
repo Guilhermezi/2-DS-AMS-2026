@@ -1,17 +1,24 @@
 # 🎓 Site ETEC Zona Leste
 
-Projeto desenvolvido para a disciplina de **Programação Web II (PW II)** com o objetivo de recriar o site da ETEC com um **design melhorado** e funcionalidades básicas utilizando **HTML, CSS, Bootstrap e PHP**.
+Projeto desenvolvido para a disciplina de **Programação Web II (PW II)** com o objetivo de recriar o site institucional da **ETEC Zona Leste**, aplicando melhorias de design, responsividade e interatividade com **PHP, JavaScript e Bootstrap**.
 
 ---
 
-## 📌 Objetivo
+## 📖 Sobre o Projeto
 
-Desenvolver um site institucional inspirado na ETEC Zona Leste, aplicando conceitos de:
+Este projeto simula um site institucional moderno para a ETEC Zona Leste, reunindo informações da escola, cursos, formulários e páginas de contato.
 
-* Estruturação de páginas web
-* Estilização com CSS e Bootstrap
-* Interatividade com formulários
-* Uso básico de PHP
+Um dos principais destaques do projeto é a **página de Contato**, que foi aprimorada com validações no front-end e no back-end para oferecer uma experiência mais profissional e segura ao usuário.
+
+---
+
+## 🎯 Objetivos
+
+* Aplicar conceitos de desenvolvimento web na prática
+* Construir interfaces modernas e responsivas
+* Implementar formulários funcionais com validações
+* Trabalhar com integração entre front-end e PHP
+* Melhorar a experiência do usuário (UI/UX)
 
 ---
 
@@ -20,6 +27,7 @@ Desenvolver um site institucional inspirado na ETEC Zona Leste, aplicando concei
 * HTML5
 * CSS3
 * Bootstrap 5
+* JavaScript
 * PHP
 * Remix Icons
 
@@ -27,57 +35,92 @@ Desenvolver um site institucional inspirado na ETEC Zona Leste, aplicando concei
 
 ## 📄 Páginas do Projeto
 
-* **Home** → Página principal com apresentação da escola
-* **Inscrição** → Formulário para cadastro de alunos
-* **Cursos** → Lista de cursos oferecidos
-* **Pesquisa de Satisfação** → Avaliação dos usuários
-* **Contato** → Envio de mensagens
+* **Home** — Página principal com apresentação da escola
+* **Inscrição** — Formulário para cadastro de alunos
+* **Cursos** — Lista de cursos oferecidos
+* **Pesquisa de Satisfação** — Avaliação dos usuários
+* **Contato** — Envio de mensagens com validações avançadas
 
 ---
 
-## ⚙️ Funcionalidades
+## ⭐ Destaque: Formulário de Contato
 
-* Navbar responsiva
-* Carrossel de imagens
-* Cards de cursos
-* Formulários com envio de dados
-* Layout moderno utilizando Bootstrap
+A página de contato foi refatorada para oferecer mais segurança, usabilidade e interatividade.
 
----
+### Funcionalidades implementadas
 
-## 🎥 Vídeo de Demonstração
+✅ Validação em tempo real com JavaScript
+✅ Validação no envio do formulário
+✅ Máscara automática para telefone
+✅ Contador de caracteres da mensagem (máx. 500)
+✅ Loader visual no botão durante envio
+✅ Sanitização dos dados com PHP
+✅ Proteção contra **XSS** usando `htmlspecialchars()`
+✅ Exibição de mensagem de sucesso após envio
 
-> Aqui está o vídeo demonstrando o funcionamento do site:
+### Validações aplicadas
 
+* Nome deve possuir no mínimo 3 caracteres
+* E-mail precisa estar em formato válido
+* Telefone precisa seguir máscara brasileira
+* Mensagem deve conter conteúdo mínimo antes do envio
 
-https://github.com/user-attachments/assets/b7e701d1-58c5-4441-870b-5ac821e9882d
+Essas verificações garantem maior confiabilidade no processamento dos dados enviados pelo usuário.
 
 ---
 
 ## 🚀 Como Executar o Projeto
 
-1. Baixe ou clone o repositório:
+### 1. Clone o repositório
 
-```
+```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
 
-2. Coloque os arquivos em um servidor local (XAMPP, WAMP ou similar)
+### 2. Configure um servidor local
 
-3. Acesse no navegador:
+Utilize uma ferramenta como:
 
-```
+* XAMPP
+* WAMP
+* Laragon
+
+### 3. Execute no navegador
+
+```bash
 http://localhost/siteEtec/index.php
 ```
+
+---
+
+## 🎥 Demonstração
+
+Vídeo demonstrando o funcionamento do projeto:
+
+https://github.com/user-attachments/assets/b7e701d1-58c5-4441-870b-5ac821e9882d
+
+---
+
+## 📚 Aprendizados
+
+Durante o desenvolvimento deste projeto foram praticados conceitos como:
+
+* Estruturação de páginas web
+* Responsividade com Bootstrap
+* Manipulação do DOM com JavaScript
+* Validação de formulários
+* Processamento de dados com PHP
+* Boas práticas de segurança
 
 ---
 
 ## 👨‍💻 Autor
 
 **Guilherme Izidio Nogueira**
+Estudante de Desenvolvimento de Sistemas, com foco em desenvolvimento web e evolução constante na área de tecnologia.
 
 ---
 
-## 📚 Observações
+## 📌 Observações
 
-Este projeto tem fins **educacionais** e foi desenvolvido como atividade escolar.
+Projeto desenvolvido com fins **educacionais** como atividade da disciplina de **Programação Web II**.
