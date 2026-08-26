@@ -92,6 +92,10 @@ td a:hover {
     text-decoration: underline;
 }
 
+td a:last-child {
+    color: #dc2626;
+}
+
 nav p a,
 p a {
     color: #2563eb;
