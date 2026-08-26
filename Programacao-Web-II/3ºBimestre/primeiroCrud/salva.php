@@ -18,4 +18,8 @@
 
     // Executando a declaração SQL
     $stmt->execute();
+
+    echo "<link rel='stylesheet' href='style.css'>";
+    echo "<h1>Aluno cadastrado com sucesso!</h1>";
+    echo "<p><a href='listar.php'>Ver lista de alunos</a> | <a href='index.html'>Cadastrar outro</a></p>";
 ?>
