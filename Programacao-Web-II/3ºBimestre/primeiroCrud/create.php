@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Alunos</title>
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="controllers/salvar.php" method="POST">
+    <form action="insert.php" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -17,6 +17,6 @@
         <button type="submit">Cadastrar</button>
     </form>
 
-    <button><a href="controllers/listar.php">Listar Alunos</a></button>
+    <button><a href="read.php">Listar Alunos</a></button>
 </body>
 </html>
