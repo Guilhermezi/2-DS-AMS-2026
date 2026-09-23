@@ -44,6 +44,7 @@ php -S localhost:8000
 CrudPortalDeEmpregados/
 ├── index.php                    → menu principal
 ├── portal.sql                   → script de criação do banco
+├── VideoExplicação.mp4          → tutorial em vídeo (navegação CRUD)
 ├── config/
 │   └── Conexao.php              → conexão com o banco (PDO)
 ├── vaga/
@@ -78,11 +79,14 @@ CrudPortalDeEmpregados/
 
 Um **candidato pertence a uma vaga** (relação muitos para um: várias candidaturas para a mesma vaga).
 
-## Formato de Entrega
+## Tutorial em Vídeo
 
-- Repositório no GitHub com o `README` completo
-- Arquivo SQL: `portal.sql`
-- Tutorial em vídeo navegando pelo site com as operações de CRUD
+Vídeo demonstrando a navegação pelo site com as operações de **CRUD** (Create, Read, Update e Delete):
+
+<video src="VideoExplicação.mp4" controls style="max-width:100%;"></video>
+
+Se preferir, baixe o arquivo diretamente: [VideoExplicação.mp4](VideoExplicação.mp4)
+
 
 ---
-Projeto desenvolvido para a disciplina de Programação Web II — 2º DS.
+Projeto desenvolvido por **Guilherme Izidio Nogueira** para a disciplina de Programação Web II — 2ºDS.

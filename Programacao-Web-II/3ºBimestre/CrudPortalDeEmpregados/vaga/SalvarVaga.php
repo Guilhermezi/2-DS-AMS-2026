@@ -1,21 +1,29 @@
 <?php
     include '../config/Conexao.php';
 
-    $titulo = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
-    $requisitos = $_POST['requisitos'];
+    $titulo = trim($_POST['titulo']);
+    $descricao = trim($_POST['descricao']);
+    $requisitos = trim($_POST['requisitos']);
     $salario = $_POST['salario'];
 
-    $sql = "INSERT INTO vaga (titulo, descricao, requisitos, salario) VALUES (:titulo, :descricao, :requisitos, :salario)";
+    $sqlCheck = "SELECT COUNT(*) AS total FROM vaga WHERE titulo = :titulo";
+    $stmtCheck = $conexao->prepare($sqlCheck);
+    $stmtCheck->bindParam(':titulo', $titulo);
+    $stmtCheck->execute();
+    $jaExiste = ($stmtCheck->fetch(PDO::FETCH_ASSOC)['total'] > 0);
 
-    $stmt = $conexao->prepare($sql);
+    if (!$jaExiste) {
+        $sql = "INSERT INTO vaga (titulo, descricao, requisitos, salario) VALUES (:titulo, :descricao, :requisitos, :salario)";
 
-    $stmt->bindParam(':titulo', $titulo);
-    $stmt->bindParam(':descricao', $descricao);
-    $stmt->bindParam(':requisitos', $requisitos);
-    $stmt->bindParam(':salario', $salario);
+        $stmt = $conexao->prepare($sql);
 
-    $stmt->execute();
+        $stmt->bindParam(':titulo', $titulo);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->bindParam(':requisitos', $requisitos);
+        $stmt->bindParam(':salario', $salario);
+
+        $stmt->execute();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,9 +48,16 @@
     </nav>
 
     <main class="container my-5" style="max-width: 640px;">
-        <div class="alert alert-success text-center">
-            <h4>Vaga cadastrada com sucesso!</h4>
-        </div>
+        <?php if ($jaExiste): ?>
+            <div class="alert alert-danger text-center">
+                <h4>Vaga não cadastrada!</h4>
+                <p class="mb-0">Já existe uma vaga com o título <strong><?= htmlspecialchars($titulo) ?></strong>. Utilize um título diferente.</p>
+            </div>
+        <?php else: ?>
+            <div class="alert alert-success text-center">
+                <h4>Vaga cadastrada com sucesso!</h4>
+            </div>
+        <?php endif; ?>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a href="ListarVagas.php" class="btn btn-primary">Ver lista de vagas</a>
             <a href="CadastrarVaga.php" class="btn btn-outline-secondary">Cadastrar outra</a>

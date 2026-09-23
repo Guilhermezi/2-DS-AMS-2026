@@ -3,21 +3,30 @@
 
     $id_original = $_POST['id_original'];
     $id = $_POST['id'];
-    $titulo = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
-    $requisitos = $_POST['requisitos'];
+    $titulo = trim($_POST['titulo']);
+    $descricao = trim($_POST['descricao']);
+    $requisitos = trim($_POST['requisitos']);
     $salario = $_POST['salario'];
 
-    $sql = "UPDATE portal.vaga SET id = :id, titulo = :titulo, descricao = :descricao, requisitos = :requisitos, salario = :salario WHERE id = :id_original";
-    $stmt = $conexao->prepare($sql);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->bindParam(':titulo', $titulo);
-    $stmt->bindParam(':descricao', $descricao);
-    $stmt->bindParam(':requisitos', $requisitos);
-    $stmt->bindParam(':salario', $salario);
-    $stmt->bindParam(':id_original', $id_original, PDO::PARAM_INT);
+    $sqlCheck = "SELECT COUNT(*) AS total FROM vaga WHERE titulo = :titulo AND id <> :id_original";
+    $stmtCheck = $conexao->prepare($sqlCheck);
+    $stmtCheck->bindParam(':titulo', $titulo);
+    $stmtCheck->bindParam(':id_original', $id_original, PDO::PARAM_INT);
+    $stmtCheck->execute();
+    $jaExiste = ($stmtCheck->fetch(PDO::FETCH_ASSOC)['total'] > 0);
 
-    $atualizado = $stmt->execute();
+    if (!$jaExiste) {
+        $sql = "UPDATE portal.vaga SET id = :id, titulo = :titulo, descricao = :descricao, requisitos = :requisitos, salario = :salario WHERE id = :id_original";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':titulo', $titulo);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->bindParam(':requisitos', $requisitos);
+        $stmt->bindParam(':salario', $salario);
+        $stmt->bindParam(':id_original', $id_original, PDO::PARAM_INT);
+
+        $atualizado = $stmt->execute();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,7 +50,16 @@
     </nav>
 
     <main class="container my-5" style="max-width: 640px;">
-        <?php if ($atualizado): ?>
+        <?php if ($jaExiste): ?>
+            <div class="alert alert-danger text-center">
+                <h4>Erro ao atualizar a vaga!</h4>
+                <p class="mb-0">Já existe outra vaga com o título <strong><?= htmlspecialchars($titulo) ?></strong>. Utilize um título diferente.</p>
+            </div>
+            <div class="text-center">
+                <a href="EditarVaga.php?id=<?= $id_original ?>" class="btn btn-warning">Voltar e corrigir</a>
+                <a href="ListarVagas.php" class="btn btn-secondary">Ver lista de vagas</a>
+            </div>
+        <?php elseif ($atualizado): ?>
             <div class="alert alert-success text-center">
                 <h4>Vaga atualizada com sucesso!</h4>
             </div>
