@@ -1,7 +1,5 @@
 
 
-https://github.com/user-attachments/assets/2a5d4660-efde-4202-9555-1125eb09c73d
-
 # Portal de Empregos / Vagas de Emprego
 
 Sistema web de **cadastro de vagas de emprego** com **inscrição de candidatos**, desenvolvido em **PHP**, **MySQL**, **Bootstrap** e **JavaScript** para a disciplina de **Programação Web II**.
