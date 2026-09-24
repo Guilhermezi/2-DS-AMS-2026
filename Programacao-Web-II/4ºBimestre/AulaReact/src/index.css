@@ -1,0 +1,103 @@
+:root {
+  --bg: #fbf6ec;
+  --bg-soft: #f3ead7;
+  --surface: #ffffff;
+  --surface-2: #f7f1e3;
+
+  --primary: #24574d;
+  --primary-dark: #1b4338;
+  --primary-soft: #e1f0ea;
+
+  --accent: #d99a34;
+  --accent-dark: #a86f16;
+  --accent-soft: #fceed2;
+
+  --ink: #22302d;
+  --ink-soft: #4f5f5b;
+  --line: #e4dcc9;
+
+  --ok: #2f7d4f;
+  --ok-soft: #e2f0e6;
+  --warn: #a55a1e;
+  --warn-soft: #fbe9d6;
+
+  --shadow: 0 10px 30px rgba(47, 74, 66, 0.1);
+  --shadow-sm: 0 4px 14px rgba(47, 74, 66, 0.08);
+
+  --radius: 20px;
+  --radius-sm: 14px;
+
+  --sans: 'Verdana', 'Segoe UI', Tahoma, system-ui, sans-serif;
+
+  --font-scale: 1;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--sans);
+  font-size: calc(19px * var(--font-scale));
+  line-height: 1.75;
+  letter-spacing: 0.4px;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+html[data-dyslexia='on'] {
+  letter-spacing: 0.08em;
+  word-spacing: 0.2em;
+}
+
+html[data-dyslexia='on'] body,
+html[data-dyslexia='on'] button,
+html[data-dyslexia='on'] input,
+html[data-dyslexia='on'] textarea {
+  letter-spacing: 0.1em;
+  word-spacing: 0.25em;
+  line-height: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+button {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--primary-dark);
+}
