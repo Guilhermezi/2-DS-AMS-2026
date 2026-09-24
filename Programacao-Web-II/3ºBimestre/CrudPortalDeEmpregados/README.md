@@ -1,3 +1,5 @@
+
+
 # Portal de Empregos / Vagas de Emprego
 
 Sistema web de **cadastro de vagas de emprego** com **inscrição de candidatos**, desenvolvido em **PHP**, **MySQL**, **Bootstrap** e **JavaScript** para a disciplina de **Programação Web II**.
@@ -83,7 +85,9 @@ Um **candidato pertence a uma vaga** (relação muitos para um: várias candidat
 
 Vídeo demonstrando a navegação pelo site com as operações de **CRUD** (Create, Read, Update e Delete):
 
-<video src="VideoExplicação.mp4" controls style="max-width:100%;"></video>
+
+https://github.com/user-attachments/assets/46852245-4eba-4614-ba29-bab7a91f5022
+
 
 Se preferir, baixe o arquivo diretamente: [VideoExplicação.mp4](VideoExplicação.mp4)
 
