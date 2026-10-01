@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- ========== META DADOS DA PÁGINA ========== -->
+
+    <!-- Codificação de caracteres: garante que acentos (ex.: "Previsão") apareçam corretamente -->
+    <meta charset="UTF-8">
+
+    <!-- Responsividade: a página se adapta ao tamanho da tela do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece na aba do navegador -->
+    <title>Previsão do Tempo</title>
+
+    <!-- Importa a folha de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========== CARTÃO PRINCIPAL ========== -->
+
+    <!-- .container centraliza a página e cria o efeito de cartão de vidro (ver style.css) -->
+    <div class="container">
+
+        <!-- ========== CABEÇALHO ========== -->
+
+        <!-- Emoji ilustrativo do clima -->
+        <span class="icone">🌤️</span>
+
+        <!-- Título da aplicação -->
+        <h1 class="titulo">Previsão do Tempo</h1>
+
+        <!-- Texto de apoio -->
+        <p class="subtitulo">Digite o nome de uma cidade e veja o clima agora</p>
+
+        <!-- ========== FORMULÁRIO DE BUSCA ========== -->
+
+        <!-- .busca mantém o campo e o botão na mesma linha (ver style.css) -->
+        <div class="busca">
+
+            <!-- Campo de texto onde o usuário digita o nome da cidade -->
+            <input type="text" id="cidade" placeholder="Digite o nome da cidade">
+
+            <!-- Botão que dispara a consulta.
+                 O onclick foi removido de propósito: a amarração do evento é feita no script.js,
+                 mantendo o HTML limpo e separando a estrutura da lógica. -->
+            <button id="buscar">Buscar</button>
+
+        </div>
+
+        <!-- ========== ÁREA DE RESULTADO ========== -->
+
+        <!-- Div vazia que será preenchida pelo script.js com a previsão do tempo -->
+        <div id="resultado"></div>
+
+    </div>
+
+    <!-- ========== SCRIPT ========== -->
+
+    <!-- Carrega o JavaScript da página.
+         Fica no final do <body> para que todo o HTML seja lido antes da execução do script. -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

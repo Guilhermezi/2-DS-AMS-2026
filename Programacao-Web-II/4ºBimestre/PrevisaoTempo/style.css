@@ -1,0 +1,282 @@
+/* ================================================================
+   PREVISÃO DO TEMPO - style.css
+   ------------------------------------------------------------
+   Organizado em seções:
+     1. Variáveis (cores e tamanhos reutilizáveis)
+     2. Reset e base
+     3. Layout / container
+     4. Cabeçalho
+     5. Formulário (input + botão)
+     6. Cartão de resultado
+     7. Responsividade
+   ================================================================ */
+
+
+/* ================================================================
+   SEÇÃO 1 - VARIÁVEIS
+   ================================================================ */
+
+/* :root define variáveis CSS globais, usadas em todo o arquivo com var(--nome) */
+:root {
+
+    /* Cores do fundo (de cima para baixo) */
+    --cor-fundo-inicio: #1e3c72;
+    --cor-fundo-fim: #2a5298;
+
+    /* Cores do cartão central */
+    --cor-cartao: rgba(255, 255, 255, 0.12);
+    --cor-borda: rgba(255, 255, 255, 0.25);
+
+    /* Cores do texto */
+    --cor-texto: #ffffff;
+    --cor-texto-suave: rgba(255, 255, 255, 0.75);
+
+    /* Cores do botão */
+    --cor-botao-inicio: #56ccf2;
+    --cor-botao-fim: #2f80ed;
+
+    /* Outros */
+    --cor-destaque: #56ccf2;
+    --sombra: 0 20px 40px rgba(0, 0, 0, 0.25);
+    --raio-borda: 16px;
+
+}
+
+
+/* ================================================================
+   SEÇÃO 2 - RESET E BASE
+   ================================================================ */
+
+/* Remove a margem padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing faz o padding entrar na conta da largura, evitando estouro da caixa */
+    box-sizing: border-box;
+}
+
+/* Estilo padrão da página inteira */
+body {
+
+    /* Fundo em degradê */
+    background: linear-gradient(135deg, var(--cor-fundo-inicio), var(--cor-fundo-fim));
+
+    /* Garante que o degradê cubra a tela toda, mesmo se o conteúdo for menor */
+    min-height: 100vh;
+
+    /* display flex + centralização */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Espaçamento interno */
+    padding: 24px;
+
+    /* Fonte padrão */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cor-texto);
+
+}
+
+
+/* ================================================================
+   SEÇÃO 3 - LAYOUT / CONTAINER
+   ================================================================ */
+
+/* .container é o cartão central (efeito "glassmorphism": vidro fosco) */
+.container {
+
+    /* Limita a largura para não ficar esticado em telas grandes */
+    width: 100%;
+    max-width: 520px;
+
+    /* Fundo semi-transparente */
+    background: var(--cor-cartao);
+
+    /* Borda suave e arredondada */
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+
+    /* Efeito de vidro desfocado (backdrop-filter) */
+    backdrop-filter: blur(10px);
+
+    /* Sombra e espaçamento interno */
+    box-shadow: var(--sombra);
+    padding: 32px;
+
+}
+
+
+/* ================================================================
+   SEÇÃO 4 - CABEÇALHO
+   ================================================================ */
+
+/* Emoji grande do topo */
+.icone {
+    font-size: 48px;
+    text-align: center;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Título principal */
+.titulo {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+/* Texto de apoio abaixo do título */
+.subtitulo {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+/* ================================================================
+   SEÇÃO 5 - FORMULÁRIO (INPUT + BOTÃO)
+   ================================================================ */
+
+/* Agrupa o campo e o botão na mesma linha */
+.busca {
+    display: flex;
+    gap: 10px;
+}
+
+/* Campo de texto da cidade */
+#cidade {
+
+    /* Cresce para ocupar o espaço disponível na linha */
+    flex: 1;
+
+    /* Evita o padding alterar a largura total do campo */
+    min-width: 0;
+
+    /* Aparência */
+    padding: 14px 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--cor-texto);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+
+    /* some com o contorno azul padrão do navegador */
+    outline: none;
+
+    /* muda a borda e a sombra ao clicar no campo */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Cor do texto de exemplo (placeholder) */
+#cidade::placeholder {
+    color: var(--cor-texto-suave);
+}
+
+/* Efeito ao focar o campo */
+#cidade:focus {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(86, 204, 242, 0.25);
+}
+
+/* Botão "Buscar" */
+#buscar {
+
+    /* mantém o mesmo visual do campo */
+    padding: 14px 26px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: inherit;
+    color: #0b2545;
+    background: linear-gradient(135deg, var(--cor-botao-inicio), var(--cor-botao-fim));
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+
+    /* animação suave do botão */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+#buscar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Efeito ao clicar (o botão afunda) */
+#buscar:active {
+    transform: translateY(0);
+}
+
+
+/* ================================================================
+   SEÇÃO 6 - CARTÃO DE RESULTADO
+   ================================================================ */
+
+/* Espaço entre o formulário e o resultado */
+#resultado {
+    margin-top: 24px;
+}
+
+/* Quando não há resultado, a div fica vazia e não ocupa espaço */
+#resultado:empty {
+    margin-top: 0;
+}
+
+/* Título com o nome da cidade */
+#resultado h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Cada linha de informação (temperatura, umidade, etc.) */
+#resultado p {
+
+    /* fundo translúcido para separar visualmente as linhas */
+    background: rgba(255, 255, 255, 0.08);
+
+    /* borda colorida à esquerda */
+    border-left: 3px solid var(--cor-destaque);
+    border-radius: 6px;
+
+    /* espaçamento e fonte */
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Mantém os <p> com o mesmo espaçamento mesmo depois do último */
+#resultado p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ================================================================
+   SEÇÃO 7 - RESPONSIVIDADE
+   ================================================================ */
+
+/* Em telas estreitas (celular), o campo e o botão ficam empilhados */
+@media (max-width: 480px) {
+
+    /* Reduz o espaçamento interno do cartão */
+    .container {
+        padding: 24px 20px;
+    }
+
+    /* .busca deixa de ser uma linha e vira uma coluna */
+    .busca {
+        flex-direction: column;
+    }
+
+    /* Botão ocupa a largura toda */
+    #buscar {
+        width: 100%;
+    }
+}
