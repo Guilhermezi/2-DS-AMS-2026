@@ -1,0 +1,48 @@
+async function buscaCEP() {
+    const cep = document.getElementById("cepInput").value.trim();
+
+    if(cep === ""){
+        alert("Digite um cep!");
+        return;
+    }
+
+    try{
+        const resposta = await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`);
+
+        if(!resposta.ok){
+            alert("CEP não encontrado!");
+            return;
+        }
+
+        const dados = await resposta.json();
+
+        document.getElementById("cep").innerHTML = `CEP: ${dados.cep}`;
+        document.getElementById("state").innerHTML = `Estado: ${dados.state}`;
+        document.getElementById("city").innerHTML = `Cidade: ${dados.city}`;
+        document.getElementById("neighborhood").innerHTML = `Bairro: ${dados.neighborhood}`;
+        document.getElementById("street").innerHTML = `Rua: ${dados.street}`;
+        document.getElementById("location").innerHTML = `Localização: ${dados.location.coordinates.latitude}, ${dados.location.coordinates.longitude}`;
+        document.getElementById("timezoneName").innerHTML = `Fuso horário: ${dados.timezoneName}`;
+
+    } catch (erro) {
+        console.log(erro);
+        alert("Erro ao consultar a API");
+    }
+}
+
+function limparResultados() {
+    document.getElementById("cep").innerHTML = "CEP:";
+    document.getElementById("state").innerHTML = "Estado:";
+    document.getElementById("city").innerHTML = "Cidade:";
+    document.getElementById("neighborhood").innerHTML = "Bairro:";
+    document.getElementById("street").innerHTML = "Rua:";
+    document.getElementById("location").innerHTML = "Localização:";
+    document.getElementById("timezoneName").innerHTML = "Fuso horário:";
+}
+
+// Apertar Enter no campo já faz a busca
+document.getElementById("cepInput").addEventListener("keydown", function (evento) {
+    if (evento.key === "Enter") {
+        buscaCEP();
+    }
+});

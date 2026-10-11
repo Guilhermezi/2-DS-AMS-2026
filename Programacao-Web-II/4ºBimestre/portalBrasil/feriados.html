@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Feriados — Brasil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="bandeira.svg">
+</head>
+<body>
+    <header>
+        <img class="bandeira" src="bandeira.svg" alt="Bandeira do Brasil">
+        <h1>Saiba tudo sobre o Brasil</h1>
+        <h2>Em um lugar só</h2>
+        <h3>Busca Feriados</h3>
+    </header>
+
+    <main>
+        <a class="voltar" href="index.html"><i class="ri-arrow-left-line"></i> Voltar</a>
+
+        <div class="busca">
+            <input type="text" id="feriadoInput" placeholder="Digite o ano (ex.: 2026)">
+            <button onclick="buscaFeriados()">Consultar</button>
+        </div>
+
+        <div class="resultado">
+            <p id="feriadosQtd">Quantidade de feriados:</p>
+            <p id="feriadosLista">Feriados:</p>
+        </div>
+
+        <button class="limpar" onclick="limparResultados()">Limpar dados</button>
+    </main>
+
+    <footer>
+        <p>© 2026 Guilherme Izidio Nogueira</p>
+    </footer>
+
+    <script src="feriados.js"></script>
+</body>
+</html>

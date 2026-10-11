@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CNPJ — Brasil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="bandeira.svg">
+</head>
+<body>
+    <header>
+        <img class="bandeira" src="bandeira.svg" alt="Bandeira do Brasil">
+        <h1>Saiba tudo sobre o Brasil</h1>
+        <h2>Em um lugar só</h2>
+        <h3>Busca CNPJ</h3>
+    </header>
+
+    <main>
+        <a class="voltar" href="index.html"><i class="ri-arrow-left-line"></i> Voltar</a>
+
+        <div class="busca">
+            <input type="text" id="cnpjInput" placeholder="Digite o CNPJ (só números)">
+            <button onclick="buscaCNPJ()">Consultar</button>
+        </div>
+
+        <div class="resultado">
+            <h3 id="cnpjRazao">Razão social:</h3>
+            <p id="cnpjFantasia">Nome fantasia:</p>
+            <p id="cnpjSituacao">Situação:</p>
+            <p id="cnpjAtividade">Atividade:</p>
+            <p id="cnpjNatureza">Natureza jurídica:</p>
+            <p id="cnpjPorte">Porte:</p>
+            <p id="cnpjCapital">Capital social:</p>
+            <p id="cnpjEndereco">Endereço:</p>
+            <p id="cnpjTelefone">Telefone:</p>
+            <p id="cnpjInicio">Início da atividade:</p>
+            <p id="cnpjSocios">Sócios:</p>
+        </div>
+
+        <button class="limpar" onclick="limparResultados()">Limpar dados</button>
+    </main>
+
+    <footer>
+        <p>© 2026 Guilherme Izidio Nogueira</p>
+    </footer>
+
+    <script src="cnpj.js"></script>
+</body>
+</html>

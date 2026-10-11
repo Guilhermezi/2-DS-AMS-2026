@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta FIPE — Brasil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="bandeira.svg">
+</head>
+<body>
+    <header>
+        <img class="bandeira" src="bandeira.svg" alt="Bandeira do Brasil">
+        <h1>Saiba tudo sobre o Brasil</h1>
+        <h2>Em um lugar só</h2>
+        <h3>Busca FIPE</h3>
+    </header>
+
+    <main>
+        <a class="voltar" href="index.html"><i class="ri-arrow-left-line"></i> Voltar</a>
+
+        <p class="aviso">
+            <i class="ri-information-line"></i>
+            <span>
+                O serviço de <strong>preços da FIPE</strong> está temporariamente fora do ar.
+                Por isso, esta página busca as <strong>marcas</strong> por tipo
+                (carros, motos ou caminhões) em vez do preço pelo código FIPE.
+            </span>
+        </p>
+
+        <div class="busca">
+            <input type="text" id="fipeInput" placeholder="Digite o tipo (carros, motos ou caminhoes)">
+            <button onclick="buscaFIPE()">Consultar</button>
+        </div>
+
+        <div class="resultado">
+            <p id="fipeQtd">Quantidade de marcas:</p>
+            <p id="fipeMarcas">Marcas:</p>
+        </div>
+
+        <button class="limpar" onclick="limparResultados()">Limpar dados</button>
+    </main>
+
+    <footer>
+        <p>© 2026 Guilherme Izidio Nogueira</p>
+    </footer>
+
+    <script src="fipe.js"></script>
+</body>
+</html>

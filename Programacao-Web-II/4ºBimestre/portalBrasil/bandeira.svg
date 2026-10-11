@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 490" role="img" aria-label="Bandeira do Brasil">
+  <rect width="700" height="490" fill="#009c3b"/>
+  <polygon points="350,40 660,245 350,450 40,245" fill="#ffdf00"/>
+  <circle cx="350" cy="245" r="110" fill="#002776"/>
+  <defs>
+    <clipPath id="bolacha">
+      <circle cx="350" cy="245" r="110"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#bolacha)">
+    <path d="M 190 322 Q 350 250 510 168" fill="none" stroke="#ffffff" stroke-width="44"/>
+  </g>
+</svg>

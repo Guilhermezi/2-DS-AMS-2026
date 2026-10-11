@@ -1,0 +1,282 @@
+:root {
+    /* ---- Cores da bandeira ---- */
+    --verde:        #009c3b;
+    --amarelo:      #ffdf00;
+    --azul:         #002776;
+    --branco:       #ffffff;
+
+    --verde-escuro: #00722b;
+    --verde-claro:  #e6f5eb;
+    --azul-escuro:  #001a52;
+
+    /* ---- Neutros ---- */
+    --texto:        #1e1e1e;
+    --texto-suave:  #555555;
+    --fundo:        #f9f9fb;
+    --fundo-card:   #ffffff;
+    --borda:        #dddddd;
+
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --raio: 8px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: system-ui, Arial, sans-serif;
+}
+
+header {
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde));
+    color: var(--branco);
+    text-align: center;
+    padding: 28px 20px;
+    border-bottom: 4px solid var(--amarelo);
+}
+
+header h1 {
+    font-size: 2.4rem;
+    color: var(--branco);
+}
+
+header h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--amarelo);
+    margin-top: 4px;
+}
+
+/* Bandeira do Brasil no cabeçalho */
+header .bandeira {
+    display: block;
+    width: 76px;
+    height: auto;
+    margin: 0 auto 12px;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    animation: ondular 3.5s ease-in-out infinite;
+}
+
+@keyframes ondular {
+    0%, 100% { transform: rotate(-2deg); }
+    50%      { transform: rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header .bandeira {
+        animation: none;
+    }
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+/* Barra de busca */
+.busca {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.busca input {
+    flex: 1 1 220px;
+    max-width: 360px;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: var(--texto);
+    background-color: var(--fundo-card);
+    border: 2px solid var(--borda);
+    border-radius: var(--raio);
+}
+
+.busca input:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px var(--verde-claro);
+}
+
+/* Botões */
+button {
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--branco);
+    background-color: var(--azul);
+    border: 2px solid var(--azul);
+    border-radius: var(--raio);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--azul-escuro);
+    border-color: var(--azul-escuro);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.limpar {
+    display: block;
+    margin: 24px auto 0;
+    background-color: transparent;
+    color: var(--texto-suave);
+    border-color: var(--borda);
+}
+
+.limpar:hover {
+    background-color: #f0f0f2;
+    color: var(--texto);
+    border-color: var(--borda);
+}
+
+/* Resultado */
+.resultado {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.resultado > * {
+    overflow-wrap: break-word;
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--verde);
+    border-radius: var(--raio);
+    padding: 14px 16px;
+    box-shadow: var(--sombra);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--texto);
+}
+
+.resultado h3 {
+    font-size: 1.05rem;
+    color: var(--verde-escuro);
+}
+
+footer {
+    background-color: var(--azul);
+    color: var(--branco);
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 0.9rem;
+}
+
+/* ---------- Home: cards dos serviços ---------- */
+.titulo {
+    text-align: center;
+    color: var(--verde-escuro);
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    text-align: left;
+    text-decoration: none;
+    padding: 20px;
+    background-color: var(--fundo-card);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-top: 4px solid var(--verde);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s, border-top-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    background-color: var(--fundo-card);
+    border-color: var(--borda);
+    border-top-color: var(--amarelo);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card .icone {
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--verde);
+}
+
+.card-titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--texto-suave);
+}
+
+/* Aviso (ex.: serviço da FIPE fora do ar) */
+.aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background-color: #fffbe6;
+    border: 1px solid var(--amarelo);
+    border-left: 4px solid var(--amarelo);
+    border-radius: var(--raio);
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.aviso i {
+    color: #b8860b;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
+
+.aviso span {
+    flex: 1;
+}
+
+/* Link "Voltar" das páginas de consulta */
+.voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--azul);
+    text-decoration: none;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
