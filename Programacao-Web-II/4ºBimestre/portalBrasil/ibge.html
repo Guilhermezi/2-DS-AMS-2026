@@ -19,10 +19,10 @@
     <main>
         <a class="voltar" href="index.html"><i class="ri-arrow-left-line"></i> Voltar</a>
 
-        <div class="busca">
+        <form class="busca" onsubmit="event.preventDefault(); buscaIBGE();">
             <input type="text" id="ibgeInput" placeholder="Digite a sigla do estado (ex.: SP)">
-            <button onclick="buscaIBGE()">Consultar</button>
-        </div>
+            <button type="submit">Consultar</button>
+        </form>
 
         <div class="resultado">
             <p id="ibgeQtd">Quantidade de municípios:</p>

@@ -7,10 +7,11 @@ async function buscaCNPJ() {
     }
 
     try{
-        const resposta = await fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpj}`);
+        const resposta = await fetch(`consultar.php?servico=cnpj&valor=${encodeURIComponent(cnpj)}`);
 
         if(!resposta.ok){
-            alert("cnpj não encontrado!");
+            const erro = await resposta.json();
+            alert(erro.erro || "CNPJ não encontrado!");
             return;
         }
 
@@ -60,10 +61,3 @@ function limparResultados() {
     document.getElementById("cnpjInicio").innerHTML = "Início da atividade:";
     document.getElementById("cnpjSocios").innerHTML = "Sócios:";
 }
-
-// Apertar Enter no campo já faz a busca
-document.getElementById("cnpjInput").addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-        buscaCNPJ();
-    }
-});

@@ -7,10 +7,11 @@ async function buscaCEP() {
     }
 
     try{
-        const resposta = await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`);
+        const resposta = await fetch(`consultar.php?servico=cep&valor=${encodeURIComponent(cep)}`);
 
         if(!resposta.ok){
-            alert("CEP não encontrado!");
+            const erro = await resposta.json();
+            alert(erro.erro || "CEP não encontrado!");
             return;
         }
 
@@ -39,10 +40,3 @@ function limparResultados() {
     document.getElementById("location").innerHTML = "Localização:";
     document.getElementById("timezoneName").innerHTML = "Fuso horário:";
 }
-
-// Apertar Enter no campo já faz a busca
-document.getElementById("cepInput").addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-        buscaCEP();
-    }
-});

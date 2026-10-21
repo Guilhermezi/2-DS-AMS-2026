@@ -7,10 +7,11 @@ async function buscaDDD() {
     }
 
     try{
-        const resposta = await fetch(`https://brasilapi.com.br/api/ddd/v1/${ddd}`);
+        const resposta = await fetch(`consultar.php?servico=ddd&valor=${encodeURIComponent(ddd)}`);
 
         if(!resposta.ok){
-            alert("DDD não encontrado!");
+            const erro = await resposta.json();
+            alert(erro.erro || "DDD não encontrado!");
             return;
         }
 
@@ -36,10 +37,3 @@ function limparResultados() {
     document.getElementById("citiesQtd").innerHTML = "Quantidade de Cidades:";
     document.getElementById("cities").innerHTML = "Cidades:";
 }
-
-// Apertar Enter no campo já faz a busca
-document.getElementById("dddInput").addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-        buscaDDD();
-    }
-});

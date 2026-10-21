@@ -28,10 +28,10 @@
             </span>
         </p>
 
-        <div class="busca">
+        <form class="busca" onsubmit="event.preventDefault(); buscaFIPE();">
             <input type="text" id="fipeInput" placeholder="Digite o tipo (carros, motos ou caminhoes)">
-            <button onclick="buscaFIPE()">Consultar</button>
-        </div>
+            <button type="submit">Consultar</button>
+        </form>
 
         <div class="resultado">
             <p id="fipeQtd">Quantidade de marcas:</p>

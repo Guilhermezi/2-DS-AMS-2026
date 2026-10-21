@@ -7,10 +7,11 @@ async function buscaFIPE() {
     }
 
     try{
-        const resposta = await fetch(`https://brasilapi.com.br/api/fipe/marcas/v1/${tipo}`);
+        const resposta = await fetch(`consultar.php?servico=fipe&valor=${encodeURIComponent(tipo)}`);
 
         if(!resposta.ok){
-            alert("Tipo inválido! Use carros, motos ou caminhoes.");
+            const erro = await resposta.json();
+            alert(erro.erro || "Tipo inválido! Use carros, motos ou caminhoes.");
             return;
         }
 
@@ -33,10 +34,3 @@ function limparResultados() {
     document.getElementById("fipeQtd").innerHTML = "Quantidade de marcas:";
     document.getElementById("fipeMarcas").innerHTML = "Marcas:";
 }
-
-// Apertar Enter no campo já faz a busca
-document.getElementById("fipeInput").addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-        buscaFIPE();
-    }
-});

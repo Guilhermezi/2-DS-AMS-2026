@@ -7,10 +7,11 @@ async function buscaBanco() {
     }
 
     try{
-        const resposta = await fetch(`https://brasilapi.com.br/api/banks/v1/${codigo}`);
+        const resposta = await fetch(`consultar.php?servico=bancos&valor=${encodeURIComponent(codigo)}`);
 
         if(!resposta.ok){
-            alert("Banco não encontrado!");
+            const erro = await resposta.json();
+            alert(erro.erro || "Banco não encontrado!");
             return;
         }
 
@@ -33,10 +34,3 @@ function limparResultados() {
     document.getElementById("bancoIspb").innerHTML = "ISPB:";
     document.getElementById("bancoCompleto").innerHTML = "Nome completo:";
 }
-
-// Apertar Enter no campo já faz a busca
-document.getElementById("bancoInput").addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-        buscaBanco();
-    }
-});

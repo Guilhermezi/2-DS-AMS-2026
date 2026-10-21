@@ -1,5 +1,5 @@
 async function buscaIBGE() {
-    const uf = document.getElementById("ibgeInput").value.trim();
+    const uf = document.getElementById("ibgeInput").value.trim().toUpperCase();
 
     if(uf === ""){
         alert("Digite a sigla do estado!");
@@ -7,10 +7,11 @@ async function buscaIBGE() {
     }
 
     try{
-        const resposta = await fetch(`https://brasilapi.com.br/api/ibge/municipios/v1/${uf}`);
+        const resposta = await fetch(`consultar.php?servico=ibge&valor=${encodeURIComponent(uf)}`);
 
         if(!resposta.ok){
-            alert("Estado não encontrado!");
+            const erro = await resposta.json();
+            alert(erro.erro || "Estado não encontrado!");
             return;
         }
 
@@ -33,10 +34,3 @@ function limparResultados() {
     document.getElementById("ibgeQtd").innerHTML = "Quantidade de municípios:";
     document.getElementById("ibgeMunicipios").innerHTML = "Municípios:";
 }
-
-// Apertar Enter no campo já faz a busca
-document.getElementById("ibgeInput").addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-        buscaIBGE();
-    }
-});

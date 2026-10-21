@@ -7,10 +7,11 @@ async function buscaFeriados() {
     }
 
     try{
-        const resposta = await fetch(`https://brasilapi.com.br/api/feriados/v1/${ano}`);
+        const resposta = await fetch(`consultar.php?servico=feriados&valor=${encodeURIComponent(ano)}`);
 
         if(!resposta.ok){
-            alert("Ano inválido! Use um ano entre 1900 e 2199.");
+            const erro = await resposta.json();
+            alert(erro.erro || "Ano inválido! Use um ano entre 1900 e 2199.");
             return;
         }
 
@@ -36,10 +37,3 @@ function limparResultados() {
     document.getElementById("feriadosQtd").innerHTML = "Quantidade de feriados:";
     document.getElementById("feriadosLista").innerHTML = "Feriados:";
 }
-
-// Apertar Enter no campo já faz a busca
-document.getElementById("feriadoInput").addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-        buscaFeriados();
-    }
-});
