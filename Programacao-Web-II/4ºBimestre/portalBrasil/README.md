@@ -2,6 +2,12 @@
 
 Aplicação web desenvolvida para consultar dados públicos do Brasil. O usuário informa um valor no formulário, o PHP realiza uma requisição HTTP para a [BrasilAPI](https://brasilapi.com.br/), interpreta a resposta JSON e os dados são apresentados dinamicamente na página.
 
+# Vídeo:
+
+
+https://github.com/user-attachments/assets/4425ca5d-04f3-4b46-826c-8f16ff63b287
+
+
 ## Consultas disponíveis
 
 - CEP e endereço;
